@@ -24,6 +24,9 @@ RUN wget "https://www.dropbox.com/s/ut3136498v8lbti/v10.5_linuxx64_expc.tar.gz?d
 
 EXPOSE 50000
 
+ENV DB2_HOME /opt/ibm/db2/V10.5
+ENV LD_LIBRARY_PATH /opt/ibm/db2/V10.5/lib32/
+
 CMD ["/bin/bash"]
 
 
