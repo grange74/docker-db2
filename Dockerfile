@@ -10,10 +10,13 @@ RUN dpkg --add-architecture i386 && \
 	ln -s /lib/i386-linux-gnu/libpam.so.0 /lib/libpam.so.0 && \
 	rm -rf /var/lib/apt/lists/*
 
-# Download DB2 Express Installer from Dropbox as IBM site is too painful to automatically download from.
-# Run the installer and then clean up
+# Download DB2 Express Installer, run the installer and then clean up
 # Doing this in 1 RUN command to keep the Image size smaller by not having the Installer
-RUN wget "https://www.dropbox.com/s/ut3136498v8lbti/v10.5_linuxx64_expc.tar.gz?dl=1" \
+
+# Either download from my Dropbox as IBM site is painful to automatically download from.
+# RUN wget "https://www.dropbox.com/s/ut3136498v8lbti/v10.5_linuxx64_expc.tar.gz?dl=1" \
+# or Download directly from IBM site though link will expire eventually
+RUN wget "https://iwm.dhe.ibm.com/sdfdl/v2/regs2/db2pmopn/db2_v105/expc/Xa.2/Xb.aA_60_-i75OfR94CKScXLUXI9wWeoqJL_cXs54IWwQ/Xc.db2_v105/expc/v10.5_linuxx64_expc.tar.gz/Xd./Xf.LPr.D1vk/Xg.7883149/Xi.swg-db2expressc/XY.regsrvs/XZ.XAjHEg1Vyb6WP_XahQdVZSVCwas/v10.5_linuxx64_expc.tar.gz" \
 		-O /tmp/v10.5_linuxx64_expc.tar.gz && \         
     cd /tmp && \
     tar xvzf v10.5_linuxx64_expc.tar.gz  && \
