@@ -1,6 +1,7 @@
 Docker image with DB2 Express
 ============================
-This repo contains a docker image build file that includes Ubuntu with DB2 Express installed. 
+This repo contains a docker image build file that includes Ubuntu with DB2 10.5 Express-C (Free version) installed. 
+It is aimed at running on Dev machines to try to mirror production as much as possible without licensing implications.
 
 You will still need to create an Instance, Database and User.
 
