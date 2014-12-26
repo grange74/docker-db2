@@ -5,7 +5,7 @@ It is aimed at running on Dev machines to try to mirror production as much as po
 
 You will still need to create an Instance, Database and User.
 
-A lot of credit should got to Bryan Tsai as his repo
+A lot of credit should go to Bryan Tsai as his repo
 https://github.com/bryantsai/db2-docker allowed me to learn how to setup/install DB2 within a Docker container.
 
 * To build this image use `./build.sh`
